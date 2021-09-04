@@ -1,4 +1,5 @@
-﻿using Application.Features.Products.Commands.CreateProduct;
+﻿using Application.Features.Orders.Commands.CreateOrder;
+using Application.Features.Products.Commands.CreateProduct;
 using Application.Features.Products.Queries.GetAllProducts;
 using AutoMapper;
 using Domain.Entities;
@@ -12,9 +13,13 @@ namespace Application.Mappings
     {
         public GeneralProfile()
         {
+            //Product
             CreateMap<Product, GetAllProductsViewModel>().ReverseMap();
             CreateMap<CreateProductCommand, Product>();
             CreateMap<GetAllProductsQuery, GetAllProductsParameter>();
+
+            //Order
+            CreateMap<CreateOrderCommand, Order>();
         }
     }
 }
