@@ -2,6 +2,7 @@
 using Application.Features.Orders.Commands.CreateOrder;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Services.MarketPlaceServices.ProductService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

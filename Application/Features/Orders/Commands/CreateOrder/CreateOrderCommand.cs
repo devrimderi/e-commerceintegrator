@@ -6,6 +6,7 @@ using Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using WebApi.Services.MarketPlaceServices.ProductService;
 
 namespace Application.Features.Orders.Commands.CreateOrder
 {
@@ -15,20 +16,22 @@ namespace Application.Features.Orders.Commands.CreateOrder
         public string IncomingOrderNumber { get; set; }
         
     }
-    public class CreateProductCommandHandler : IRequestHandler<CreateOrderCommand, Response<int>>
+    public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Response<int>>
     {
         private readonly IGenericRepositoryAsync<Order> _orderRepository;
-        private readonly IMapper _mapper;
-        public CreateProductCommandHandler(IGenericRepositoryAsync<Order> orderRepository, IMapper mapper)
+        private readonly IMapper _mapper;        
+
+        public CreateOrderCommandHandler(IGenericRepositoryAsync<Order> orderRepository, IMapper mapper)
         {
             _orderRepository = orderRepository;
-            _mapper = mapper;
+            _mapper = mapper;            
         }
 
         public async Task<Response<int>> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
             var order = _mapper.Map<Order>(request);
             await _orderRepository.AddAsync(order);
+            
             return new Response<int>(order.Id);
         }
     }
