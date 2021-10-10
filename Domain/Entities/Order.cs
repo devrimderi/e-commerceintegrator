@@ -7,7 +7,7 @@ namespace Domain.Entities
 {
     public class Order : AuditableBaseEntity
     {
-        public string OrderNumber { get; set; }
+        public string OrderNumber         { get; set; }
         public string IncomingOrderNumber { get; set; }
     }
 }

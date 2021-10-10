@@ -1,12 +1,10 @@
 ﻿using Application.Interfaces;
-using Application.Interfaces.Repositories;
 using Application.Wrappers;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
-using WebApi.Services.MarketPlaceServices.ProductService;
 
 namespace Application.Features.Orders.Commands.CreateOrder
 {

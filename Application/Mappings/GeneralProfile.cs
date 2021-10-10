@@ -1,11 +1,9 @@
-﻿using Application.Features.Orders.Commands.CreateOrder;
+﻿using Application.Features.Countries.Commands.CreateCountry;
+using Application.Features.Orders.Commands.CreateOrder;
 using Application.Features.Products.Commands.CreateProduct;
 using Application.Features.Products.Queries.GetAllProducts;
 using AutoMapper;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.Mappings
 {
@@ -13,6 +11,9 @@ namespace Application.Mappings
     {
         public GeneralProfile()
         {
+            //Country
+            CreateMap<CreateCountryCommand, Country>();
+
             //Product
             CreateMap<Product, GetAllProductsViewModel>().ReverseMap();
             CreateMap<CreateProductCommand, Product>();
@@ -20,6 +21,7 @@ namespace Application.Mappings
 
             //Order
             CreateMap<CreateOrderCommand, Order>();
+
         }
     }
 }

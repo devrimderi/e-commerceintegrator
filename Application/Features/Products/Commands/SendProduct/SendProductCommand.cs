@@ -1,5 +1,5 @@
-﻿using Application.Interfaces.Repositories;
-using Application.MarketPlaceServices.ProductService.Trendyol;
+﻿using Application.Interfaces.MarketPlace.ProductServices;
+using Application.Interfaces.Repositories;
 using Application.Wrappers;
 using AutoMapper;
 using MediatR;
@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using WebApi.Services.MarketPlaceServices.ProductService;
 
-namespace Application.Features.Products.Commands.SendProduct
+namespace Application.Features.Products.Commands
 {
     public partial class SendProductCommand : IRequest<Response<int>>
     {
